@@ -48,6 +48,11 @@ jobs:
       - name: Download dependencies
         run: go mod download
 
+      - name: Generate swagger docs
+        run: |
+          go install github.com/swaggo/swag/cmd/swag@latest
+          swag init -g cmd/server/main.go --output docs
+
       - name: Build
         run: go build ./...
 
