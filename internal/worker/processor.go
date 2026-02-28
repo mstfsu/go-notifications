@@ -10,10 +10,11 @@ import (
 	"github.com/google/uuid"
 	"github.com/hibiken/asynq"
 	"github.com/rs/zerolog"
+	"golang.org/x/time/rate"
+
 	"github.com/mstfsu/go-case/internal/domain"
 	"github.com/mstfsu/go-case/internal/provider"
 	"github.com/mstfsu/go-case/internal/repository"
-	"golang.org/x/time/rate"
 )
 
 type rateLimiters struct {
