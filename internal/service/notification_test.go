@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
+
 	"github.com/mstfsu/go-case/internal/domain"
 	"github.com/mstfsu/go-case/internal/service"
 )

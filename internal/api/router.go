@@ -5,6 +5,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	fiberSwagger "github.com/swaggo/fiber-swagger"
+
 	"github.com/mstfsu/go-case/internal/api/handler"
 	"github.com/mstfsu/go-case/internal/api/middleware"
 )

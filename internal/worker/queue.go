@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/hibiken/asynq"
+
 	"github.com/mstfsu/go-case/internal/domain"
 )
 

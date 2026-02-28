@@ -6,9 +6,10 @@ import (
 	"fmt"
 
 	"github.com/google/uuid"
-	"github.com/mstfsu/go-case/internal/domain"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
+
+	"github.com/mstfsu/go-case/internal/domain"
 )
 
 type NotificationRepo struct {

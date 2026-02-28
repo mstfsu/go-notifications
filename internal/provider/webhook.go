@@ -61,7 +61,7 @@ func (p *WebhookProvider) Send(ctx context.Context, n *domain.Notification) (*Se
 	if err != nil {
 		return nil, fmt.Errorf("send request: %w", err)
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {

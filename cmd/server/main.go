@@ -55,7 +55,7 @@ func main() {
 		log.Fatal().Err(err).Msg("connect to postgres")
 	}
 	sqlDB, _ := db.DB()
-	defer sqlDB.Close()
+	defer func() { _ = sqlDB.Close() }()
 	log.Info().Msg("postgres connected")
 
 	redisOpts, err := parseRedisURL(cfg.RedisURL)
@@ -63,7 +63,7 @@ func main() {
 		log.Fatal().Err(err).Msg("parse redis url")
 	}
 	redisClient := redis.NewClient(redisOpts)
-	defer redisClient.Close()
+	defer func() { _ = redisClient.Close() }()
 	log.Info().Msg("redis connected")
 
 	asynqRedisOpt := asynq.RedisClientOpt{
@@ -75,7 +75,7 @@ func main() {
 	notifRepo := pgRepo.NewNotificationRepo(db)
 
 	asynqClient := asynq.NewClient(asynqRedisOpt)
-	defer asynqClient.Close()
+	defer func() { _ = asynqClient.Close() }()
 
 	webhookProvider := provider.NewWebhookProvider(cfg.WebhookSiteURL)
 
