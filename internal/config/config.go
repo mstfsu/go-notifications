@@ -6,13 +6,13 @@ import (
 )
 
 type Config struct {
-	DatabaseURL        string
-	RedisURL           string
-	WebhookSiteURL     string
-	ServerPort         string
-	WorkerConcurrency  int
-	LogLevel           string
-	MaxRetries         int
+	DatabaseURL       string
+	RedisURL          string
+	WebhookSiteURL    string
+	ServerPort        string
+	WorkerConcurrency int
+	LogLevel          string
+	MaxRetries        int
 }
 
 func Load() *Config {
