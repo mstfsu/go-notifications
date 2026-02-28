@@ -26,7 +26,7 @@ migrate:
 
 ## Roll back one migration
 migrate-down:
-	migrate -path ./migrations -database "$(DATABASE_URL)" down 1
+	@export $$(cat .env | grep -v '^#' | xargs) && migrate -path ./migrations -database "$$DATABASE_URL" down 1
 
 ## Start all services via Docker Compose
 docker-up:
